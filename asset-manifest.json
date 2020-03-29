@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/sapporo/static/css/main.3c076489.chunk.css",
+    "main.js": "/sapporo/static/js/main.2d9b387b.chunk.js",
+    "main.js.map": "/sapporo/static/js/main.2d9b387b.chunk.js.map",
+    "runtime-main.js": "/sapporo/static/js/runtime-main.7e9c9d87.js",
+    "runtime-main.js.map": "/sapporo/static/js/runtime-main.7e9c9d87.js.map",
+    "static/css/2.2fbe55bd.chunk.css": "/sapporo/static/css/2.2fbe55bd.chunk.css",
+    "static/js/2.8cf5fc5c.chunk.js": "/sapporo/static/js/2.8cf5fc5c.chunk.js",
+    "static/js/2.8cf5fc5c.chunk.js.map": "/sapporo/static/js/2.8cf5fc5c.chunk.js.map",
+    "index.html": "/sapporo/index.html",
+    "precache-manifest.c92c44ed01d2bfdbf15975ff7829b4a8.js": "/sapporo/precache-manifest.c92c44ed01d2bfdbf15975ff7829b4a8.js",
+    "service-worker.js": "/sapporo/service-worker.js",
+    "static/css/2.2fbe55bd.chunk.css.map": "/sapporo/static/css/2.2fbe55bd.chunk.css.map",
+    "static/css/main.3c076489.chunk.css.map": "/sapporo/static/css/main.3c076489.chunk.css.map",
+    "static/js/2.8cf5fc5c.chunk.js.LICENSE.txt": "/sapporo/static/js/2.8cf5fc5c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7e9c9d87.js",
+    "static/css/2.2fbe55bd.chunk.css",
+    "static/js/2.8cf5fc5c.chunk.js",
+    "static/css/main.3c076489.chunk.css",
+    "static/js/main.2d9b387b.chunk.js"
+  ]
+}
