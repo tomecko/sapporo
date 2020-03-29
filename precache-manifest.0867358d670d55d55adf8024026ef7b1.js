@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d1fded7e3c4d94bf832bf95b16e864d1",
+    "revision": "45bb9b63495f49b3412bce1549ab0028",
     "url": "/sapporo/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sapporo/static/css/2.2fbe55bd.chunk.css"
   },
   {
-    "revision": "f17ce923611e48513875",
+    "revision": "28fc500cf527f8de6b18",
     "url": "/sapporo/static/css/main.3c076489.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sapporo/static/js/2.8cf5fc5c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f17ce923611e48513875",
-    "url": "/sapporo/static/js/main.2d9b387b.chunk.js"
+    "revision": "28fc500cf527f8de6b18",
+    "url": "/sapporo/static/js/main.0deb3567.chunk.js"
   },
   {
     "revision": "d9b04185a1e61d2216ee",
