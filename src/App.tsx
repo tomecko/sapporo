@@ -59,7 +59,7 @@ function App() {
             <Button size="small">{val}</Button>)}{' '}
           etc.
         </div>
-        <div style={{ marginTop: '10px'}}>
+        <div style={{ marginTop: '10px' }}>
           <Text
             strong
           >
@@ -81,7 +81,7 @@ function App() {
                 title={`${item.votes} people voted up: person A, person B, etc.`}
               />
             </div>
-            <div style={{flexGrow: 1}}>
+            <div style={{ flexGrow: 1 }}>
               <Paragraph style={{ marginBottom: 0 }}>
                 <strong>{item.title}</strong>{' '}
                 <Badge
@@ -91,7 +91,7 @@ function App() {
                 <Text type="secondary">#{item.id}</Text>{' '}
                 <Tag
                   color={categoryColor[item.category] ?? 'magenta'}
-                  style={{marginLeft: '10px'}}
+                  style={{ marginLeft: '10px' }}
                 >
                   {item.category}
                 </Tag>
@@ -99,23 +99,23 @@ function App() {
                   {item.author}{' '}
                   {item.lastUpdate}
                 </Text>
-                <br/>
+                <br />
                 {item.description}
-                <br/>
+                <br />
                 {item.tags.map(tag => <Tag key={tag}>{tag}</Tag>)}
-                <BulbOutlined/>:{' '}
+                <BulbOutlined />:{' '}
                 parent issues:{' '}
                 {item.belongsToItems.map(belongsToItem =>
                   <a href={belongsToItem} key={belongsToItem} style={{ marginRight: '8px' }}>{belongsToItem}</a>)}
                 {' | '}
-                <LinkOutlined/>:{' '}
+                <LinkOutlined />:{' '}
                 {item.links.map(link =>
                   <a href={link} key={link} style={{ marginRight: '8px' }}>{link}</a>)}
               </Paragraph>
             </div>
             <div>
-              <BuildOutlined title="group this item with…" style={{ marginRight: '10px'}} />
-              <EditOutlined/>
+              <BuildOutlined title="group this item with…" style={{ marginRight: '10px' }} />
+              <EditOutlined />
             </div>
           </List.Item>
         )}

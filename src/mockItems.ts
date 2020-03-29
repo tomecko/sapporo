@@ -3,7 +3,7 @@ import { Item } from './types';
 const ITEMS_COUNT = 87;
 
 const getRandomElement = <T>(list: T[]): T =>
-  list[Math.floor((Math.random()*list.length))];
+  list[Math.floor((Math.random() * list.length))];
 
 const randomWords = [
   'of the',
