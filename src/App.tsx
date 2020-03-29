@@ -51,7 +51,8 @@ function App() {
           value={searchTerm}
         />
         <div style={{ marginTop: '6px' }}>
-          Show only: {}
+          Show only: {' '}
+          <Button size="small" style={{ marginLeft: '10px', marginRight: '15px' }}>parent issues</Button>
           {[4, 3, 2, 1].map(p => <Button size="small">P{p}</Button>)}
           <span style={{ marginLeft: '15px' }} />
           {Object.keys(categoryColor).map(val =>
@@ -103,8 +104,9 @@ function App() {
                 <br/>
                 {item.tags.map(tag => <Tag key={tag}>{tag}</Tag>)}
                 <BulbOutlined/>:{' '}
-                {item.relatedItems.map(relatedItem =>
-                  <a href={relatedItem} key={relatedItem} style={{ marginRight: '8px' }}>{relatedItem}</a>)}
+                parent issues:{' '}
+                {item.belongsToItems.map(belongsToItem =>
+                  <a href={belongsToItem} key={belongsToItem} style={{ marginRight: '8px' }}>{belongsToItem}</a>)}
                 {' | '}
                 <LinkOutlined/>:{' '}
                 {item.links.map(link =>

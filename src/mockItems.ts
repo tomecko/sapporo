@@ -43,6 +43,7 @@ const getRandomString = (length: number): string =>
 
 const getMockItem = (id: number): Item => ({
   author: getRandomPerson(),
+  belongsToItems: Array.from(new Set(getRandomArray(2, getRandomItem))),
   category: getRandomElement(['bug', 'redesign', 'new feature']),
   description: getRandomString(20),
   id,
@@ -53,7 +54,6 @@ const getMockItem = (id: number): Item => ({
     ...getRandomArray(2, getRandomLink),
   ])),
   priority: Math.ceil(Math.random() * 4),
-  relatedItems: Array.from(new Set(getRandomArray(4, getRandomItem))),
   tags: Array.from(new Set([getRandomString(1), getRandomString(1)])),
   title: getRandomString(5),
   votes: Math.ceil(Math.random() * 9),
