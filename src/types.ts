@@ -1,11 +1,11 @@
 export interface Item {
   author: string;
-  belongsToItems: string[];
+  belongsToItems: number[];
   category: string;
   description: string;
   id: number;
   lastUpdate: string;
-  links: string[]; // TODO: -> LinkInfo
+  links: (number | string)[];
   priority: number;
   tags: string[];
   title: string;

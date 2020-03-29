@@ -8,9 +8,11 @@ import {
   SearchOutlined,
 } from '@ant-design/icons';
 import React, { useMemo, useState } from 'react';
+import memoize from 'memoizee';
 import { useDebounce } from 'use-debounce';
 
 import { mockItems as rawItems } from './mockItems';
+import { Item } from './types';
 
 import './App.css';
 
@@ -23,6 +25,9 @@ const categoryColor: Record<string, string> = {
   'new feature': 'purple',
   'redesign': 'geekblue',
 };
+
+const getChildIssues = memoize((items: Item[], parentId: number): Item[] =>
+  items.filter(({ belongsToItems }) => belongsToItems.includes(parentId)));
 
 function App() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -104,13 +109,28 @@ function App() {
                 <br />
                 {item.tags.map(tag => <Tag key={tag}>{tag}</Tag>)}
                 <BulbOutlined />:{' '}
-                parent issues:{' '}
-                {item.belongsToItems.map(belongsToItem =>
-                  <a href={belongsToItem} key={belongsToItem} style={{ marginRight: '8px' }}>{belongsToItem}</a>)}
+                {getChildIssues(sortedItems, item.id).length > 0 ? 'child issues: ' : null}
+                {
+                  getChildIssues(sortedItems, item.id).map(childItem => (
+                    <a href={String(childItem.id)} key={childItem.id} style={{ marginRight: '8px' }}>
+                      #item-{childItem.id}
+                    </a>
+                  ))
+                }
+                {item.belongsToItems.length === 0 ? null : (
+                  <>
+                    parent issues:{' '}
+                    {item.belongsToItems.map(belongsToItem => (
+                      <a href={String(belongsToItem)} key={belongsToItem} style={{ marginRight: '8px' }}>
+                        #item-{belongsToItem}
+                      </a>
+                    ))}
+                  </>
+                )}
                 {' | '}
                 <LinkOutlined />:{' '}
                 {item.links.map(link =>
-                  <a href={link} key={link} style={{ marginRight: '8px' }}>{link}</a>)}
+                  <a href={String(link)} key={link} style={{ marginRight: '8px' }}>{link}</a>)}
               </Paragraph>
             </div>
             <div>

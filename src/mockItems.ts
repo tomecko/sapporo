@@ -30,9 +30,9 @@ const getRandomJIRA = () => `JIRA-${100000 + Math.floor(Math.random() * 10000)}`
 const getRandomSlack = () => `#channel-${Math.ceil(Math.random() * 100)} post`;
 const getRandomLink = () => `some-link-${Math.ceil(Math.random() * 10)}`;
 
-const getRandomItem = () => `#item-${Math.ceil(Math.random() * ITEMS_COUNT)}`;
+const getRandomItem = () => Math.ceil(Math.random() * ITEMS_COUNT);
 
-const getRandomArray = (maxLength: number, creatorFn: () => string): string[] =>
+const getRandomArray = (maxLength: number, creatorFn: () => number | string): (number | string)[] =>
   Array.from(Array(Math.ceil(Math.random() * maxLength)).keys()).map(creatorFn);
 
 const getRandomString = (length: number): string =>
@@ -43,7 +43,7 @@ const getRandomString = (length: number): string =>
 
 const getMockItem = (id: number): Item => ({
   author: getRandomPerson(),
-  belongsToItems: Array.from(new Set(getRandomArray(2, getRandomItem))),
+  belongsToItems: Array.from(new Set(getRandomArray(2, getRandomItem))).map(Number),
   category: getRandomElement(['bug', 'redesign', 'new feature']),
   description: getRandomString(20),
   id,
@@ -51,7 +51,7 @@ const getMockItem = (id: number): Item => ({
   links: Array.from(new Set([
     ...getRandomArray(2, getRandomJIRA),
     ...getRandomArray(2, getRandomSlack),
-    ...getRandomArray(2, getRandomLink),
+    ...getRandomArray(2, getRandomLink).map(String),
   ])),
   priority: Math.ceil(Math.random() * 4),
   tags: Array.from(new Set([getRandomString(1), getRandomString(1)])),
